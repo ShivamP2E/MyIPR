@@ -1,0 +1,129 @@
+.login{
+    display: flex;
+    justify-content: space-between;
+}
+/* Left section styling */
+.login-left{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+}
+.login-left img{
+    width: 40vw;
+    object-fit: cover;
+    height: 100vh;
+}
+.login-logo img{
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    width: 25%;
+    height: 10%;
+    object-fit: fill;
+}
+.content-head{
+    position: absolute;
+    top: 27%;
+    color: white;
+    font-size: 42px;
+    text-align: left;
+    padding: 30px;
+    font-weight: 400;
+    line-height: 50px;
+}
+.content-foot{
+    position: absolute;
+    top: 50%;
+    padding: 30px;
+    color: white;
+    font-size: 25px;
+    text-align: left;
+    line-height: 40px;
+    
+}
+
+/* Right style styling */
+
+.login-right{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    position: fixed;
+    left: 60%;
+    top: 30%;
+    
+}
+.form-head{
+    margin: 0px 0px 35px 0px;
+} 
+.form-head h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+.form-head p{
+    color: #716A79;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.form-head a{
+    text-decoration: none;
+    color: #118586;
+    cursor: pointer;
+}
+
+.form-email,.form-password p{
+    color: #757472;
+
+}
+.form-email input{
+    color: #757472;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dddae0;
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+.form-password input{
+    color: #757472;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dddae0;
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+
+.form-button button{
+    background:#02aaa5 ;
+    color: white;
+    width: 100%;
+    padding: 14px 10px 14px 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form-forgot {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0px 15px 0px;
+}
+.form-forgot a{
+    text-decoration: none;
+    color: #118586;
+    font-weight: 600;
+    
+}
+::placeholder {
+    color: #757472;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+
+/* .login-form{
+    display: flex;
+    flex-direction: column;
+} */

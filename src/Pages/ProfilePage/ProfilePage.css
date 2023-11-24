@@ -1,0 +1,148 @@
+.profilepage{
+    width: 85%;
+    background-color: #f9f9f9;
+    height: auto;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.profilepage-heading p{
+    color:#716a79 ;
+    padding-top: 10px;
+}
+.profilepage-fileformat{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fileformat p{
+    color: #716a79
+}
+hr{
+    width: 100%;
+    margin: 10px 0px;
+    background-color: #716a79;
+}
+
+.profilepage-back{
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    margin-top: 60px;
+}
+.profilepage-back a{
+    text-decoration: none;
+    color: #118586;
+}
+.profilepage-upload{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.profilepage-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 60%;
+    margin-left: 20%;
+    padding: 0px 60px 60px 60px;
+}
+.profilepage-heading{
+
+    text-align: left;
+    padding: 30px;
+
+}
+.profilepage-upload{
+    text-align: left;
+    margin-left: 30px;
+}
+
+
+.profilepage-about{
+    text-align: left;
+    padding: 0px 30px 0px 30px;
+    width: 100%;
+}
+.profilepage-about h1{
+    padding: 10px 0px;
+}
+.about-name{
+    display: flex;
+    text-align: left;
+    color: #716a79;
+    border: none;
+    width: 100%;
+    gap: 130px;
+}
+.about-first input{
+    padding: 10px 30px 10px 10px;
+    width: 150%;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.about-last input{
+    padding: 10px 30px 10px 10px;
+    width: 150%;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.about-username{
+    display: flex;
+    text-align: left;
+    color: #716a79;
+    border: none;
+    width: 100%;
+    gap: 130px;
+    margin-top: 20px;
+}
+.about-user input{
+    padding: 10px 30px 10px 10px;
+    width: 150%;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.about-email input{
+    padding: 10px 30px 10px 10px;
+    width: 150%;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+
+.about-company{
+    text-align: left;
+    width: 100%;
+    color: #716a79;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.about-company input{
+    width: 107%;
+    padding: 10px 30px 10px 10px;
+    border-radius: 7px;
+    margin-top: 10px;
+
+}
+.profilepage-kyb h1{
+    padding: 10px 0px;
+}
+
+.kybwrap{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #e0fdda;
+    padding: 7px 0px;
+    border-radius: 6px;
+}
+.profilepage-kyb{
+    margin-left: 30px;
+    text-align: left;
+    width: 100%;
+}

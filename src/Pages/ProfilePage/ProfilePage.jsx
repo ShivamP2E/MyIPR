@@ -1,13 +1,22 @@
 import React from 'react'
 import './ProfilePage.css'
-import Home from '../Home/Home'
+// import Home from '../Home/Home'
+import Navbar from '../../components/Navbar/Navbar'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 const ProfilePage = () => {
   return (
-    <>
-    <Home/>
-    <div className='profilepage'>
-      <div className="profilepage-back">
+    <div className='layout'>
+      <div className="profile-layout-nav">
+        <Navbar/>
+      </div>
+      <div className="profile-main">
+        <div className="profile-main-content">
+         <Sidebar/> 
+        </div>
+        <div className="profile-right">
+             <div className='profilepage'>
+          <div className="profilepage-back">
         <a href='#'>Back</a>
       </div>
       <div className="profilepage-main">
@@ -77,8 +86,12 @@ const ProfilePage = () => {
         </div>
 
       </div>
+             </div>
+        </div>
+        
+      </div>
+   
     </div>
-    </>
   )
 }
 

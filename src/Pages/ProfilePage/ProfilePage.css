@@ -1,8 +1,19 @@
+
+.profile-main{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-main-content{
+    width: 20%;
+}
+.profile-right{
+    width: 80%;
+}
+
 .profilepage{
-    width: 85%;
     background-color: #f9f9f9;
     height: auto;
-    margin-left: 260px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,8 +41,7 @@ hr{
 .profilepage-back{
     display: flex;
     justify-content: flex-start;
-    padding: 40px;
-    margin-top: 60px;
+    padding: 20px;
 }
 .profilepage-back a{
     text-decoration: none;
@@ -83,13 +93,13 @@ hr{
 }
 .about-first input{
     padding: 10px 30px 10px 10px;
-    width: 150%;
+    width: 100%;
     border-radius: 7px;
     margin-top: 10px;
 }
 .about-last input{
     padding: 10px 30px 10px 10px;
-    width: 150%;
+    width: 100%;
     border-radius: 7px;
     margin-top: 10px;
 }
@@ -104,13 +114,13 @@ hr{
 }
 .about-user input{
     padding: 10px 30px 10px 10px;
-    width: 150%;
+    width: 100%;
     border-radius: 7px;
     margin-top: 10px;
 }
 .about-email input{
     padding: 10px 30px 10px 10px;
-    width: 150%;
+    width: 100%;
     border-radius: 7px;
     margin-top: 10px;
 }
@@ -123,7 +133,7 @@ hr{
     margin-bottom: 20px;
 }
 .about-company input{
-    width: 107%;
+    width: 100%;
     padding: 10px 30px 10px 10px;
     border-radius: 7px;
     margin-top: 10px;
@@ -140,6 +150,7 @@ hr{
     background-color: #e0fdda;
     padding: 7px 0px;
     border-radius: 6px;
+    width: 90%;
 }
 .profilepage-kyb{
     margin-left: 30px;

@@ -1,16 +1,11 @@
-import "./UserManagement.css";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Navbar from "../../components/Navbar/Navbar";
-import { PiArrowUUpRightBold } from "react-icons/pi";
 import React, { useState, useEffect } from "react";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
-import { db } from "../../Firebase";
-// import Dropdown2 from "../../components/Extras/Dropdown2/Dropdown2";
-import StatusDropdown from "../../components/Extras/StatusDropdown/StatusDropdown";
-import UserModal from "../../components/Extras/Modal/UserModal";
-import { FiUsers } from "react-icons/fi";
+import { db } from "../Firebase";
+import StatusDropdown from "./Extras/StatusDropdown/StatusDropdown";
 
-const UserManagement = () => {
+
+
+const Joineduser = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
   // pagination
   const [currrentPage, setCurrrentPage] = useState(1);
@@ -81,36 +76,8 @@ const UserManagement = () => {
   };
 
   return (
-    <>
-      <div className={`layout  ${isModalOpen ? "blur-background" : ""}`}>
-        <div className="user-layout-nav">
-          <Navbar />
-        </div>
-        <div className="user-main-content">
-          <div className="user-left">
-            <Sidebar />
-          </div>
-          <div className="user-right">
-            {/* // onClick={cancelhandler} */}
-            {isModalOpen && <div className="backdrop"></div>}
-            <div className="user-right-wrapper">
-              <div className="user-role">
-                <h1>User Role & Permissions</h1>
-                <button type="button" onClick={InviteHandler}>
-                  + Invite User
-                </button>
-              </div>
-              <div className="user-container">
-                <div className="joined-user">
-                  <FiUsers />
-                  <p>View Joined Users</p>
-                </div>
-                <div className="invited-user">
-                  <PiArrowUUpRightBold />
-                  <p>View Invited User</p>
-                </div>
-              </div>
-              <div className="user-search-status">
+    <div>
+       <div className="user-search-status">
                 <div className="search-container">
                   <div className="search-svg">
                     <svg
@@ -163,9 +130,8 @@ const UserManagement = () => {
                     Clear Filter
                   </button>
                 </div>
-              </div>
-             
-              <table>
+          </div>
+          <table>
                 <thead>
                   <tr>
                     <th>User Name</th>
@@ -249,13 +215,8 @@ const UserManagement = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {isModalOpen && <UserModal onCloseModal={closeModal} />}
-    </>
-  );
-};
+    </div>
+  )
+}
 
-export default UserManagement;
+export default Joineduser

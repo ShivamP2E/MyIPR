@@ -1,0 +1,242 @@
+/* .user-main{
+    display: flex;
+    justify-content:space-between ;
+    
+} */
+.layout {
+  width: 100%;
+}
+.user-layout-nav {
+  width: 100%;
+}
+.user-main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.user-left {
+  width: 20%;
+}
+.user-right {
+  background-color: #f9f9f9;
+  width: 80%;
+  height: 100%;
+}
+.user-right-wrapper {
+  height: auto;
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 20px 40px 20px 40px;
+  margin: 75px 50px 0px 50px;
+}
+.user-search-status {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 30px 0px 30px 0px;
+  gap: 40px;
+}
+.search-container {
+  position: relative;
+}
+.search-svg svg {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+}
+/* .status-container button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: #02aaa5;
+  font-weight: 700;
+} */
+.status-container{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.active-button{
+  padding: 12px 10px 12px 25px ;
+  border: none;
+  border-radius: 8px 0px 0px 8px;
+  color: black;
+  background-color: #ddd;
+  font-weight: 700;
+  cursor: pointer;
+}
+.inactive-button{
+  padding: 12px 25px 12px 10px;
+  border: 1px solid white;
+  border-radius: 0px 8px 8px 0px;
+  color: black;
+  background-color: #ddd;
+  font-weight: 700;
+  cursor: pointer;
+}
+.clear-button{
+  padding: 12px 25px;
+  border: 1px solid white;
+  border-radius: 8px ;
+  color: white;
+  background-color: #02aaa5;
+  font-weight: 700;
+}
+.search-input input {
+  border: none;
+  background-color: white;
+  padding: 10px 40px;
+  border-radius: 8px;
+}
+
+.user-role {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-role button {
+  border: none;
+  padding: 13px;
+  background-color: #02aaa5;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.user-role button:hover {
+  background-color: #ddd;
+}
+
+.status-container {
+  position: relative;
+}
+.clear-button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+  color: black;
+}
+.inactive-button:focus{
+  background-color: #02aaa5;
+  color: white;
+}
+.active-button:focus{
+  background-color: #02aaa5;
+  color: white;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  margin: 30px 0px 10px 0px;
+}
+
+.joined-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.invited-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+table {
+  margin-top: 20px;
+  background-color: white;
+  border-collapse: collapse;
+}
+thead {
+  color: #757472;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody {
+  text-align: left;
+}
+th {
+  padding: 20px 10px;
+}
+td {
+  padding: 17px 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 17px;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.email-style {
+  color: #757472;
+}
+.row-style:hover {
+  background-color: #dcf1f1;
+}
+.active-style p {
+ 
+  border-radius: 8px;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  align-items: center;
+}
+.pageInformation span {
+  color: #555;
+  font-size: 16px;
+}
+.pageNumber span {
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.active {
+  background-color: #02aaa5;
+  color: #fff;
+}
+.pageNumber span:hover {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+
+  
+  .blur-background {
+    /* filter: brightness(60%); */
+    filter: blur(2px);
+  }
+
+
+  .inactive-class{
+    color: red;
+    background-color: rgb(253, 221, 221);
+  }
+  .active-class{
+    color: #55ab31;
+     background-color: #def6d4f7;
+  }

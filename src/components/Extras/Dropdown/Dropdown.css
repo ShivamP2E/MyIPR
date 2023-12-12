@@ -1,0 +1,42 @@
+.dropDownProfile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:5.5rem ;
+    right:1.5rem ;
+    width: auto;
+    padding: 15px;
+    border-radius: 15px ;
+    background-color: white;
+    border: 1px solid gray;
+}
+.dropDownProfile ul li{
+    list-style: none;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 0px;
+}
+.li-style{
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 8px ;
+}
+.li-style:hover{
+    
+    background-color: #118586;
+    border-radius: 8px;
+    text-align: center;
+}
+.dropDownProfile::before{
+    
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    width: 5px;
+    height: 25px;   
+    transform: rotate(45deg);
+    background-color: white;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray ;
+}

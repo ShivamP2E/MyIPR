@@ -1,15 +1,8 @@
-.active-class{
-    color: #f7ce9dde;
-}
-.status-style{
-    color: rgb(239, 159, 60);
-    background-color: #f7ce9dde;
-}
-.loading-table-invite{
+.loading-table-join{
     margin-top: 20%;
     margin-bottom: 40%;
     animation-name: spin;
-    animation-duration: 900ms;
+    animation-duration: 700ms;
     animation-iteration-count:infinite ;
     animation-timing-function: linear;
     width: 12%;

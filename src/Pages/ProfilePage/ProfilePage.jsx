@@ -40,7 +40,7 @@ const ProfilePage = () => {
       setLoading(true);
       const updateUserRef = doc(db, "user", user[0].id);
       const updatedFields = {};
-     
+
       if (updateUsername !== "" && updateUsername !== user[0].username) {
         updatedFields.username = updateUsername;
       }
@@ -60,7 +60,9 @@ const ProfilePage = () => {
       if (Object.keys(updatedFields).length > 0) {
         // Only update the document if there are modified fields
         await updateDoc(updateUserRef, updatedFields);
-        console.log("Profile updated successfully!");
+        setTimeout(() => {
+          alert("Profile updated successfully!");
+        }, 1000);
 
         // Update the local state with the new data
         setUser((prevUser) => {
@@ -89,6 +91,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetch_data = async () => {
       try {
+        setLoading(true);
         if (currentUser && currentUser.email) {
           const q = query(
             collection(db, "user"),
@@ -106,6 +109,8 @@ const ProfilePage = () => {
       } catch (error) {
         console.error("Error fetching", error);
         setError("Unable to fetch data");
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -121,10 +126,18 @@ const ProfilePage = () => {
         <div className="profile-main-content">
           <Sidebar />
         </div>
-        {loading && <p>Loading...</p>}
+
         {error && <p style={{ color: "red" }}>{error}</p>}
-        {!loading && !error && (
-          <div className="profile-right">
+
+        <div className="profile-right">
+          {loading && (
+            <img
+              src="https://dev-myipr.p2eppl.com/static/media/no-recent-files.b9b58a7e1ef3eec7e3aeca9ff90e57a9.svg" alt="logo"
+              className="loading-profile"
+            ></img>
+          )}
+
+          {!loading && (
             <div className="profilepage">
               <div className="profilepage-back">
                 <Link to="/home">Back</Link>
@@ -179,16 +192,14 @@ const ProfilePage = () => {
                             onChange={(e) => setUpdateFirstName(e.target.value)}
                           />
                         </div>
-                          <div className="about-last">
-                            <p>Last Name</p>
-                            <input
+                        <div className="about-last">
+                          <p>Last Name</p>
+                          <input
                             type="text"
-                            defaultValue={item.lastname} 
-                            onChange={(e) => setUpdateLastName(e.target.value)} />
-                            </div>
-
-
-
+                            defaultValue={item.lastname}
+                            onChange={(e) => setUpdateLastName(e.target.value)}
+                          />
+                        </div>
                       </div>
                       <div className="about-username">
                         <div className="about-user">
@@ -244,8 +255,8 @@ const ProfilePage = () => {
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

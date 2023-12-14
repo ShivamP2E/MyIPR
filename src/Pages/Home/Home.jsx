@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Home.css";
-import { MdOutlineVerified } from "react-icons/md";
+
 const Home = () => {
   return (
     <>

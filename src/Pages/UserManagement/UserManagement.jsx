@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Navbar from "../../components/Navbar/Navbar";
 import { PiArrowUUpRightBold } from "react-icons/pi";
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase";
 // import Dropdown2 from "../../components/Extras/Dropdown2/Dropdown2";
 import StatusDropdown from "../../components/Extras/StatusDropdown/StatusDropdown";
@@ -79,6 +79,8 @@ const UserManagement = () => {
     setSelectedStatus(null);
     setSearch("");
   };
+
+  
 
   return (
     <>

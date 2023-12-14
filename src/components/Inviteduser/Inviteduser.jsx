@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs} from "firebase/firestore";
 import { db } from "../../Firebase";
 import './InvitedUser.css'
 
@@ -14,11 +14,13 @@ const Inviteduser = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState(false); // changing the status of the user
+  const [loading, setLoading] = useState(false);
  
   const [user, setUser] = useState([]);
   useEffect(() => {
     const fetch_data = async () => {
       try {
+        setLoading(true)
         const profile_collection = collection(db, "inviteduser");
         const snapshot = await getDocs(profile_collection);
         const profile_data = snapshot.docs.map((doc) => ({
@@ -30,6 +32,9 @@ const Inviteduser = () => {
         setStatus(false);
       } catch (error) {
         console.error("error fetching", error);
+      }
+      finally{
+        setLoading(false)
       }
     };
     fetch_data();
@@ -63,6 +68,15 @@ const Inviteduser = () => {
                 </div>
                 
           </div>
+          {loading && (
+            <img
+              src="https://dev-myipr.p2eppl.com/static/media/no-recent-files.b9b58a7e1ef3eec7e3aeca9ff90e57a9.svg" alt="logo"
+              className="loading-table-invite"
+            ></img>
+          )}
+
+          {!loading && (
+          <>
           <table>
                 <thead>
                   <tr>
@@ -134,6 +148,8 @@ const Inviteduser = () => {
                   ))}
                 </div>
               </div>
+              </>
+          )}
     </div>
   )
 }

@@ -151,6 +151,7 @@
   }
   th {
     padding: 20px 10px;
+    width: 10%;
   }
   td {
     padding: 17px 10px;
@@ -159,6 +160,7 @@
     font-size: 17px;
     font-weight: 500;
     word-wrap: break-word;
+    width: 10%;
   }
   .email-style {
     color: #757472;

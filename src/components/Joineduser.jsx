@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../Firebase";
 import StatusDropdown from "./Extras/StatusDropdown/StatusDropdown";
+import './Joineduser.css'
 
 
 
@@ -13,10 +14,7 @@ const Joineduser = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState(false); // changing the status of the user
-
-  //status filter dropdown
-  const [open, setOpen] = useState(false);
-  const toggle = () => setOpen(!open);
+  const [loading,setLoading] = useState(false);
 
   //Status dropwdown
   const [statusActive, setStatusActive] = useState({});
@@ -38,6 +36,7 @@ const Joineduser = () => {
   useEffect(() => {
     const fetch_data = async () => {
       try {
+        setLoading(true)
         const profile_collection = collection(db, "user");
         const snapshot = await getDocs(profile_collection);
         const profile_data = snapshot.docs.map((doc) => ({
@@ -50,6 +49,9 @@ const Joineduser = () => {
       } catch (error) {
         console.error("error fetching", error);
       }
+      finally{
+        setLoading(false);
+      }
     };
     fetch_data();
   }, [status]);
@@ -58,26 +60,15 @@ const Joineduser = () => {
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currrentItem = user.slice(indexOfFirstItem, indexOfLastItem);
   const pagination = (pageNumber) => setCurrrentPage(pageNumber);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const InviteHandler = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  // const cancelhandler = (e) =>{
-  //   e.stopPropagation();
-  //   setIsModalOpen(!isModalOpen)
-  // }
   const clearFilter = () => {
     setSelectedStatus(null);
     setSearch("");
   };
 
   return (
-    <div>
-       <div className="user-search-status">
+    <>
+       
+           <div className="user-search-status">
                 <div className="search-container">
                   <div className="search-svg">
                     <svg
@@ -131,12 +122,22 @@ const Joineduser = () => {
                   </button>
                 </div>
           </div>
+          {loading && (
+            <img
+              src="https://dev-myipr.p2eppl.com/static/media/no-recent-files.b9b58a7e1ef3eec7e3aeca9ff90e57a9.svg" alt="loading.."
+              className="loading-table-join"
+            ></img>
+          )}
+
+          {!loading && (
+            <>
           <table>
                 <thead>
                   <tr>
                     <th>User Name</th>
                     <th>Company</th>
                     <th>Role</th>
+                    <th>Date</th>
                     <th style={{ textAlign: "center" }}>Status</th>
                   </tr>
                 </thead>
@@ -164,10 +165,11 @@ const Joineduser = () => {
                           </td>
                           <td>{item.company}</td>
                           <td>{item.role}</td>
+                          <td>{item.date}</td>
                           <td className="active-style">
                             <p
                               className={
-                                item.status == "Inactive"
+                                item.status === "Inactive"
                                   ? "inactive-class"
                                   : "active-class"
                               }
@@ -191,7 +193,10 @@ const Joineduser = () => {
                       ))
                   )}
                 </tbody>
-              </table>
+                
+              
+              </table> 
+             
               <div className="pagination">
                 <div className="pageInformation">
                   <span>
@@ -215,7 +220,10 @@ const Joineduser = () => {
                   ))}
                 </div>
               </div>
-    </div>
+              </>
+               )}
+           
+    </>
   )
 }
 

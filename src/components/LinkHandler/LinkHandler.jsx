@@ -4,7 +4,6 @@ import "./LinkHandler.css";
 import { FiUsers } from "react-icons/fi";
 import { PiArrowUUpRightBold } from "react-icons/pi";
 import UserModal from "../Extras/Modal/UserModal";
-import StatusDropdown from "../Extras/StatusDropdown/StatusDropdown";
 const LinkHandler = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const InviteHandler = () => {

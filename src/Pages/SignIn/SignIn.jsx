@@ -12,6 +12,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole]= useState("Staff");
+  const [status, setStatus] = useState("Active");
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -24,6 +26,8 @@ const SignUp = () => {
         email: email,
         password: password,
         role: role,
+        date: new Date().toISOString().split('T')[0],
+        status: status,
       });
       alert("Data added in database successfully");
     } catch (error) {}

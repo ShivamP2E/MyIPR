@@ -10,8 +10,8 @@ const UserModal = ({ onCloseModal }) => {
   const [lname, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [close, setClose] = useState(false);
-  const [status, setStatus] = useState("Pending")
-  const [role,setrRole]= useState("Staff")
+  const [status] = useState("Pending")
+  const [role]= useState("Staff")
   
   // const openModal = () => {
   //   setClose(false);

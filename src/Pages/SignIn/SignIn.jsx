@@ -11,8 +11,8 @@ const SignUp = () => {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole]= useState("Staff");
-  const [status, setStatus] = useState("Active");
+  const [role]= useState("Staff");
+  const [status] = useState("Active");
 
   const submitHandler = async (e) => {
     e.preventDefault();

@@ -7,10 +7,10 @@ import './InvitedUser.css'
 
 
 const Inviteduser = () => {
-  const [selectedStatus, setSelectedStatus] = useState(null);
+  const [selectedStatus] = useState(null);
   // pagination
   const [currrentPage, setCurrrentPage] = useState(1);
-  const [itemPerPage, setItemPerPage] = useState(5);
+  const [itemPerPage] = useState(5);
   const [totalItems, setTotalItems] = useState(0);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState(false); // changing the status of the user

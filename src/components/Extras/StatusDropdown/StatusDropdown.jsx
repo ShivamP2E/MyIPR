@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../../Firebase';
 import './StatusDropdown.css';

@@ -39,7 +39,7 @@ const Navbar = () => {
     }
     };
     fetch_data();
-  }, [currentUser]);
+  }, [currentUser,user]);
 
   return (
     <>

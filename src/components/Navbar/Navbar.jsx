@@ -10,14 +10,14 @@ import { UserAuth } from "../../context/AuthContext";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen(!open);
-  const [loading , setLoading] = useState(false); 
+
   const [user, setUser] = useState([]);
   const { user: currentUser } = UserAuth();
   useEffect(() => {
     const fetch_data = async (e) => {
       // e.preventDefault();
       try {
-        setLoading(true)
+
         if (currentUser && currentUser.email) {
           const q = query(
             collection(db, "user"),
@@ -34,9 +34,7 @@ const Navbar = () => {
       } catch (error) {
         console.log("error fetching", error);
       }
-      finally{
-        setLoading(false);
-    }
+      
     };
     fetch_data();
   }, [currentUser,user]);

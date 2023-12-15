@@ -63,12 +63,10 @@ const Navbar = () => {
           </div>
           {user.map((item) => (
 
-            <div className="profile-icon">
-              {loading && <img src="https://i.pinimg.com/222x/e7/1d/dd/e71ddd5f93978d86edeb2df6270936ba.jpg" alt="loading"/>}
-              {
-                !loading && (
-              <img src={item.image} alt="logo" srcset="" />)
-            }
+              // {loading && <img src="https://i.pinimg.com/222x/e7/1d/dd/e71ddd5f93978d86edeb2df6270936ba.jpg" alt="loading"/> }
+              // {!loading && (
+                <div className="profile-icon">
+                <img src={item.image} alt="logo" srcset="" />
               <button onClick={toggle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +78,7 @@ const Navbar = () => {
               </button>
               {open && <Dropmenu />}
             </div>
+            // )}
           ))}
         </div>
       </div>

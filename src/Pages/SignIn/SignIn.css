@@ -137,7 +137,7 @@
     cursor: pointer;
 }
 .form-button button:disabled{
-    background-color: lightgray !important;
+    background-color: rgb(131, 131, 131) !important;
 }
 /* .form-forgot {
     display: flex;

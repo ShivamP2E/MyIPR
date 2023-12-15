@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
+import { AiOutlineLoading3Quarters } from "react-icons/ai"
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -117,7 +118,7 @@ const Login = () => {
            
           </div>
           <div className="form-button">
-            <button type="submit"  disabled={loading}>{loading ? 'Logging in..' : 'Login'}</button>
+            <button type="submit"  disabled={loading}>{loading ? <AiOutlineLoading3Quarters className="spinner"/> : 'Login'}</button>
           </div>
         </div>
       </form>

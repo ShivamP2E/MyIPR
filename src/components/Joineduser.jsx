@@ -10,7 +10,7 @@ const Joineduser = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
   // pagination
   const [currrentPage, setCurrrentPage] = useState(1);
-  const [itemPerPage, setItemPerPage] = useState(5);
+  const [itemPerPage] = useState(5);
   const [totalItems, setTotalItems] = useState(0);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState(false); // changing the status of the user
@@ -145,6 +145,7 @@ const Joineduser = () => {
                   {search.toLowerCase() === "" && currrentItem.length === 0 ? (
                     <tr>
                       <td colSpan={5}>No Record found</td>
+                   
                     </tr>
                   ) : (
                     user
@@ -159,6 +160,7 @@ const Joineduser = () => {
                       .map((item) => (
                         <tr className="row-style" key={item.id}>
                           <td>
+                            x
                             {item.username}
                             <br />
                             <p className="email-style">{item.email}</p>

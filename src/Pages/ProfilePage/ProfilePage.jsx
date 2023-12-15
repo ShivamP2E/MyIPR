@@ -133,7 +133,7 @@ const ProfilePage = () => {
           {loading && (
             <img
               src="https://dev-myipr.p2eppl.com/static/media/no-recent-files.b9b58a7e1ef3eec7e3aeca9ff90e57a9.svg" alt="logo"
-              className="loading-profile"
+              className="loading-profiles"
             ></img>
           )}
 

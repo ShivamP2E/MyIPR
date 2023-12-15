@@ -233,7 +233,7 @@
   
 
 
-  .loading-profile{
+  .loading-profiles{
     margin-top: 30%;
     animation-name: spin;
     animation-duration: 700ms;
@@ -244,9 +244,9 @@
   }
   @keyframes spin{
     from{
-        transform: rotate(0deg);
+        transform: rotateX(0deg);
     }
     to{
-        transform: rotate(-360deg);
+        transform: rotateY(-180deg);
     }
 }

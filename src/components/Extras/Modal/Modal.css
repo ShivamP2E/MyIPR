@@ -1,0 +1,69 @@
+.invite-modal-layout{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: #f9f9f9;
+    padding: 30px;
+    /* z-index: 4; */
+}
+.invite-user{
+    display: flex;
+    justify-content: space-between;
+   padding-bottom: 20px;
+    align-items: center;
+}
+.invite-user h1{
+    font-size: 23px;
+    font-weight: 700;
+}
+.invite-user p{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 5px;
+}
+.invite-user svg{
+    cursor: pointer;
+}
+.invite-user svg:hover{
+   fill: #ddd;
+}
+form{
+    padding: 15px;
+}
+.form-name,.form-email{
+    text-align: left;
+}
+.invite-user-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-right: 15px;
+}
+.cancel-button{
+    border: none;
+    padding: 18px  30px!important;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 8px;
+    font-size: 15px !important;
+    font-weight: 600;
+    cursor: pointer;
+} 
+.cancel-button:hover{
+    background-color: #ddd !important;
+    color: black !important;
+}
+.sendinvite{
+    border: none;
+    padding: 18px !important;
+    background-color: #02AAA5;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px !important;
+    font-weight: 600;
+    cursor: pointer;
+}  
+
+  

@@ -1,27 +1,20 @@
-import "./UserManagement.css";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Navbar from "../../components/Navbar/Navbar";
-import { PiArrowUUpRightBold } from "react-icons/pi";
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../Firebase";
-// import Dropdown2 from "../../components/Extras/Dropdown2/Dropdown2";
-import StatusDropdown from "../../components/Extras/StatusDropdown/StatusDropdown";
-import UserModal from "../../components/Extras/Modal/UserModal";
-import { FiUsers } from "react-icons/fi";
+import { db } from "../Firebase";
+import StatusDropdown from "./Extras/StatusDropdown/StatusDropdown";
+import './Joineduser.css'
 
-const UserManagement = () => {
+
+
+const Joineduser = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
   // pagination
   const [currrentPage, setCurrrentPage] = useState(1);
-  const [itemPerPage, setItemPerPage] = useState(5);
+  const [itemPerPage] = useState(5);
   const [totalItems, setTotalItems] = useState(0);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState(false); // changing the status of the user
-
-  //status filter dropdown
-  const [open, setOpen] = useState(false);
-  const toggle = () => setOpen(!open);
+  const [loading,setLoading] = useState(false);
 
   //Status dropwdown
   const [statusActive, setStatusActive] = useState({});
@@ -43,6 +36,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetch_data = async () => {
       try {
+        setLoading(true)
         const profile_collection = collection(db, "user");
         const snapshot = await getDocs(profile_collection);
         const profile_data = snapshot.docs.map((doc) => ({
@@ -55,6 +49,9 @@ const UserManagement = () => {
       } catch (error) {
         console.error("error fetching", error);
       }
+      finally{
+        setLoading(false);
+      }
     };
     fetch_data();
   }, [status]);
@@ -63,56 +60,15 @@ const UserManagement = () => {
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currrentItem = user.slice(indexOfFirstItem, indexOfLastItem);
   const pagination = (pageNumber) => setCurrrentPage(pageNumber);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const InviteHandler = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  // const cancelhandler = (e) =>{
-  //   e.stopPropagation();
-  //   setIsModalOpen(!isModalOpen)
-  // }
   const clearFilter = () => {
     setSelectedStatus(null);
     setSearch("");
   };
 
-  
-
   return (
     <>
-      <div className={`layout  ${isModalOpen ? "blur-background" : ""}`}>
-        <div className="user-layout-nav">
-          <Navbar />
-        </div>
-        <div className="user-main-content">
-          <div className="user-left">
-            <Sidebar />
-          </div>
-          <div className="user-right">
-            {/* // onClick={cancelhandler} */}
-            {isModalOpen && <div className="backdrop"></div>}
-            <div className="user-right-wrapper">
-              <div className="user-role">
-                <h1>User Role & Permissions</h1>
-                <button type="button" onClick={InviteHandler}>
-                  + Invite User
-                </button>
-              </div>
-              <div className="user-container">
-                <div className="joined-user">
-                  <FiUsers />
-                  <p>View Joined Users</p>
-                </div>
-                <div className="invited-user">
-                  <PiArrowUUpRightBold />
-                  <p>View Invited User</p>
-                </div>
-              </div>
-              <div className="user-search-status">
+       
+           <div className="user-search-status">
                 <div className="search-container">
                   <div className="search-svg">
                     <svg
@@ -165,14 +121,23 @@ const UserManagement = () => {
                     Clear Filter
                   </button>
                 </div>
-              </div>
-             
-              <table>
+          </div>
+          {loading && (
+            <img
+              src="https://dev-myipr.p2eppl.com/static/media/no-recent-files.b9b58a7e1ef3eec7e3aeca9ff90e57a9.svg" alt="loading.."
+              className="loading-table-join"
+            ></img>
+          )}
+
+          {!loading && (
+            <>
+          <table>
                 <thead>
                   <tr>
                     <th>User Name</th>
                     <th>Company</th>
                     <th>Role</th>
+                    <th>Date</th>
                     <th style={{ textAlign: "center" }}>Status</th>
                   </tr>
                 </thead>
@@ -180,6 +145,7 @@ const UserManagement = () => {
                   {search.toLowerCase() === "" && currrentItem.length === 0 ? (
                     <tr>
                       <td colSpan={5}>No Record found</td>
+                   
                     </tr>
                   ) : (
                     user
@@ -194,16 +160,18 @@ const UserManagement = () => {
                       .map((item) => (
                         <tr className="row-style" key={item.id}>
                           <td>
+                            x
                             {item.username}
                             <br />
                             <p className="email-style">{item.email}</p>
                           </td>
                           <td>{item.company}</td>
                           <td>{item.role}</td>
+                          <td>{item.date}</td>
                           <td className="active-style">
                             <p
                               className={
-                                item.status == "Inactive"
+                                item.status === "Inactive"
                                   ? "inactive-class"
                                   : "active-class"
                               }
@@ -227,7 +195,10 @@ const UserManagement = () => {
                       ))
                   )}
                 </tbody>
-              </table>
+                
+              
+              </table> 
+             
               <div className="pagination">
                 <div className="pageInformation">
                   <span>
@@ -251,13 +222,11 @@ const UserManagement = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {isModalOpen && <UserModal onCloseModal={closeModal} />}
+              </>
+               )}
+           
     </>
-  );
-};
+  )
+}
 
-export default UserManagement;
+export default Joineduser

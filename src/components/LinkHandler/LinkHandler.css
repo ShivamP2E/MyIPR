@@ -1,0 +1,37 @@
+.user-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    margin: 30px 0px 10px 0px;
+  }
+  
+.joined-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .joined-user:hover{
+    background-color: #dcf1f1;
+  }
+  .invited-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .invited-user:hover{
+    background-color: #dcf1f1;
+  }
+  a{
+    color: black;
+  }
+ 

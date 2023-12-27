@@ -1,0 +1,51 @@
+.dropDownStatus{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 2px;
+    /* top: 11.5rem;
+    right:37.5rem ; */
+    width: auto;
+    padding: 12px;
+    border-radius: 15px ;
+    background-color: white;
+    border: 1px solid #ddd;
+    
+}
+.dropDownStatus ul li{
+    list-style: none;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 5px;
+    cursor: pointer;
+
+    
+}
+.dropDownStatus ul li:hover{
+    background-color: #ddd;
+    border-radius: 8px;
+}
+.li-style{
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 8px ;
+}
+.li-style:hover{
+    
+    background-color: #118586;
+    border-radius: 8px;
+    text-align: center;
+}
+.dropDownStatus::before{
+    
+    position: absolute;
+    /* top: -1rem;
+    right: 2rem; */
+    width: 5px;
+    height: 25px;   
+    transform: rotate(45deg);
+    background-color: white;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray ;
+}
